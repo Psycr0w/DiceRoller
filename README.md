@@ -2,7 +2,7 @@
 
 Simple dice program to evaluate mutli-sided dice, fudge dice and exploding dice.
 
-Usage:
+## Usage:
 
 python roller.py
 
@@ -19,7 +19,7 @@ mode = d, f, ! or s.
 number of sides = number of sides of the dice.
 
 
-  example:
+## example:
 
 
 roller.exe 2s10 - will print the sum of two tensided dice.
