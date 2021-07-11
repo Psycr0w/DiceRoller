@@ -1,6 +1,6 @@
 # DiceRoller
 
-Simple dice program to evaluate mutli-sided dice, fudge dice and exploding dice.\n
+Simple dice program to evaluate mutli-sided dice, fudge dice and exploding dice.
 
 Usage:
 
