@@ -35,41 +35,61 @@ args = parser.parse_args()
 # -h, h, /h, --help
 
 
-
-
-def roll(num):
-    return random.randrange(1,num + 1)
-
 a = re.findall(pattern="^\d+", string=args.dice)
 b = re.findall(pattern="\D", string=args.dice)
 c = re.findall(pattern="\d+$", string=args.dice)
 
+def roll(num):
+    return random.randrange(1,num + 1)
+
+def recrand(x,a=0):
+    while a%x<1:a+=random.randint(1,x)
+    return a
 
 list = []
 
-if b[0] != 'f':
-    if b[0] != '!':
+string = "".join(b)
+
+
+if string != 'f':
+    if string != '!':
         for x in range(int(a[0])):
             list.append(roll(int(c[0])))
 
     else:
-        def recrand(x,a=0):
-            while a%x<1:a+=random.randint(1,x)
-            return a
         for x in range(int(a[0])):
             list.append(recrand(int(c[0])))
         print((str(list)))
 
-
-    if b[0] == 'd':
+    if string == 'd':
         seperator = ","
         print((str(list)))
 
-    if b[0] == 's':
+    elif string == 's!':
+        sum = 0
+        for i in list:
+            if int(i) == int(c[0]):
+                sum = sum + int(i) + roll(int(c[0]))
+            else:
+                sum = sum + int(i)
+        print(sum)
+
+    elif string == 's!':
+        sum = 0
+        print("yay")
+        for i in list:
+            if i == c:
+                sum = sum + int(i) + roll(int(c))
+            else:
+                sum = sum + int(i)
+        print(sum)
+
+    elif string == 's':
         sum = 0
         for i in list:
             sum = sum + int(i)
         print(sum)
+
 
 else:
     for x in range(int(a[0])):
@@ -83,7 +103,6 @@ else:
             summe -= 1
         else:
             pass
-
     for i,x in enumerate(list):
         list[i] = translation[x]
     print(list)
