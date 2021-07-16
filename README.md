@@ -15,6 +15,8 @@ mode = d, f, ! or s.
 
 '!' will output exploding dice.
 
+'s!' will output the sum of exploding dice.
+
 'f' is used for fudge dice. Since fudge dice are always the same, the input is <dicenumber>f.
 number of sides = number of sides of the dice.
 
