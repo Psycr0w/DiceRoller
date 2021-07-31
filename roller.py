@@ -79,7 +79,7 @@ if string != 'f':
         print("yay")
         for i in list:
             if i == c:
-                sum = sum + int(i) + recrand(int(c))
+                sum = sum + int(i) + roll(int(c))
             else:
                 sum = sum + int(i)
         print(sum)
